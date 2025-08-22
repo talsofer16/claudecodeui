@@ -1,12 +1,9 @@
 # nixpacks.toml
 
 [phases.setup]
-# "..."       -> Includes default Nixpacks packages
-# "python3"   -> Adds Python for node-gyp
-# "gcc"       -> Adds the C++ compiler (g++) for native addons
-# "nodejs_22" -> Upgrades Node.js to resolve the warning
-# "npm-10_x"  -> Upgrades npm to match the newer Node.js
-nixPkgs = ["...", "python3", "gcc", "nodejs_22", "npm-10_x"]
+# "..." tells Nixpacks to include its default setup first (which includes Node.js and npm).
+# Then, we ADD the extra packages we need (python3 and gcc).
+nixPkgs = ["...", "python3", "gcc"]
 
 [start]
 cmd = "npm run start"
